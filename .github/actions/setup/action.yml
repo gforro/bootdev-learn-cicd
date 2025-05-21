@@ -3,9 +3,6 @@ description: 'Checks out project and sets up go'
 runs:
   using: 'composite'
   steps:
-    - name: Check out code
-      uses: actions/checkout@v4
-
     - name: Set up Go
       uses: actions/setup-go@v5
       with:

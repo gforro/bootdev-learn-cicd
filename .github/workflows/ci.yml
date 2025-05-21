@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup
+      - uses: actions/checkout@v4
+
+      - name: Setup environment
         uses: ./.github/actions/setup
 
       - name: Tests
@@ -21,7 +23,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup
+      - uses: actions/checkout@v4
+        
+      - name: Setup environment
         uses: ./.github/actions/setup
 
       - name: Format code
