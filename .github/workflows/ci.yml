@@ -18,6 +18,12 @@ jobs:
       - name: Tests
         run: go test -cover ./...
 
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+      - name: gosec
+        run: gosec ./...
+
   style:
     name: Style
     runs-on: ubuntu-latest
@@ -37,9 +43,4 @@ jobs:
       - name: Linting
         run: staticcheck ./...
 
-      - name: Install gosec
-        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
-
-      - name: gosec
-        run: gosec ./...
 
